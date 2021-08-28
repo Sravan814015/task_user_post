@@ -67,5 +67,9 @@ public class adminservice {
 		ps.save(p1);
 
 	}
+		public void saveuser(userinfo us) {
+		uss.save(us);
+	}
+
 
 }
