@@ -59,6 +59,16 @@ public class admincontroller {
 	public ModelAndView listp() {
 		return new ModelAndView("admin/listpost", "listp", adserv.getpost());
 	}
+		@RequestMapping("/newuser")
+	public ModelAndView newu() {
+		return new ModelAndView("admin/createu", "User1", new userinfo());
+	}
+
+	@RequestMapping("/saveus")
+	public ModelAndView saveus(userinfo us) {
+		adserv.saveuser(us);
+		return listu();
+	}
 
 	@RequestMapping(path = "/deleteCustomer")
 	public ModelAndView deletet(@RequestParam("id") int customerId) {
